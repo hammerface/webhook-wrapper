@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+
+  resources :users
+  
+  match '/home',     to: 'static_pages#home',     via: 'get'
+  match '/webhooks', to: 'static_pages#webhooks', via: 'get'
+  match '/history',  to: 'static_pages#history',  via: 'get'
+
+  match '/signin',   to: 'users#new',             via: 'get'
+  match '/signout',  to: 'users#destroy',         via: 'delete'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

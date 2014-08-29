@@ -1,0 +1,20 @@
+<div class="scrolling-region">
+  <ul class="list-group">
+    <% list.each do |element| %>
+      <%= render partial: "url", locals: { url: element } %>
+    <% end %>
+  </ul>
+</div>
+
+<%= form_for(:url, url: urls_path) do |f| %>
+  <div class="input-group">
+    <%= f.text_field :address, placeholder: "URL" %>
+    <%= f.hidden_field :trig_type, :value => trigger %>
+    <span class="input-group-btn">
+      <%= f.submit "Add", class: "btn btn-large btn-primary" %>
+    </span>
+  </div><!-- /input-group -->
+<% end %>
+
+
+

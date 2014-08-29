@@ -29,8 +29,13 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    @user = current_user
+    puts 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
+    puts @user
+    puts 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
     sign_out
     @user.delete
+    redirect_to signin_url
   end
 
 end

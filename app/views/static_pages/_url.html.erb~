@@ -1,0 +1,6 @@
+<li>
+  <span class="address"><%= url.address %></span>
+    <%= link_to "delete", url, method: :delete,
+                               data: { confirm: "You sure?" },
+                               title: url.address %>
+</li>

@@ -14,7 +14,7 @@ gem 'sprockets-rails', '~> 2.0.0'
 gem 'railties'
 
 gem 'bootstrap-sass'
-gem 'sprockets'
+gem 'sprockets', '2.11.0'
 gem 'bcrypt-ruby'
 gem 'faker'
 gem 'will_paginate'

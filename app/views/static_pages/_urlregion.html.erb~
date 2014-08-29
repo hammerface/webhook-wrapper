@@ -1,0 +1,12 @@
+<ul class="list-group">
+  <% list.each do |element| %>
+    <li class="list-group-item"><%= element.address %></li>
+  <% end %>
+</ul>
+
+<%= form_for(:url, url: urls_path) do |f| %>
+<%= f.label :address %>
+<%= f.text_field :address %>
+<%= f.hidden_field :trig_type, :value => trigger %>
+<%= f.submit "Add", class: "btn btn-large btn-primary" %>
+<% end %>

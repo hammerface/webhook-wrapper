@@ -1,7 +1,7 @@
 <li class="list-group-item">
   <span class="address"><%= url %></span>
   <div>
-    <%= form_for(:url, url: urls_path, html: {class: 'form-inline'}) do |f| %>
+    <%= form_for(:url, url: urls_path) do |f| %>
     <fieldset>
       <div class="input-group">
         <%= f.hidden_field :address,     :value => url     %>

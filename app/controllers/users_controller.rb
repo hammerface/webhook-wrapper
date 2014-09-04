@@ -1,12 +1,16 @@
 class UsersController < ApplicationController
-  
+  require 'util_functions'
+
   def new
     @user = User.new
   end
   
   def create
-    p4       = '/usr/local/bin/p4'
-    server   = '10.0.102.53:1209'
+    p4     = Utils::get_p4
+    server = Utils::get_server
+
+    #p4       = '/usr/local/bin/p4'
+    #server   = '10.0.102.53:1209'
     user     = params[:user][:name]
     password = params[:user][:password]
 

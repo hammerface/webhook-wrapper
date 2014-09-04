@@ -1,3 +1,22 @@
+# This file must contain the following information:
+# location of p4 executable
+# perforce server to point to
+# username of a user able to modify keys
+# the password of the aforementioned user
+#
+# The format of the file must follow the example format below.
+# The field name must be the start of the line, and all lines
+# must end with a newline character.
+#
+# Example file contents:
+#
+# p4: /usr/local/bin/p4
+# server: 10.0.102.53:1666
+# user: example_user
+# password: example_password
+#
+# Fill in your information here:
+
 p4: /usr/local/bin/p4
 server: 10.0.102.53:1209
 user: jbrower

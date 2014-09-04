@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
  
   resources :users
-  resources :urls
+  resources :urls, only: [:create]
   
-  root 'static_pages#home'
-  match '/home',     to: 'static_pages#home',     via: 'get'
+  root 'static_pages#webhooks'
   match '/webhooks', to: 'static_pages#webhooks', via: 'get'
-  match '/history',  to: 'static_pages#history',  via: 'get'
 
   match '/signin',   to: 'users#new',             via: 'get'
   match '/signout',  to: 'users#destroy',         via: :delete

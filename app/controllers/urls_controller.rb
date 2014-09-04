@@ -1,28 +1,22 @@
 class UrlsController < ApplicationController
   def create
-    puts 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
-    puts params
-    puts 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
+    @urls = Url.new(params[:url][:trig_type])
+    button = params[:url][:button_type]
+    address = params[:url][:address]
 
-    @url = Url.new(url_params)
-    if @url.save
-      #flash[:success] = "URL added."
-      redirect_to webhooks_url
-    else
-      #flash[:error] = "Add failed."
-      redirect_to webhooks_url
-    end      
-  end  
-
-
-  def destroy
-    @url = Url.find(params[:id])
-    @url.destroy
-    redirect_to webhooks_url
+    if ('add' == button && !(address.empty?))
+      @urls << (address)
+    elsif ('delete' == button)
+      @urls.delete(address)
+    end
+    
+    Utils::send_webhook_urls(params[:url][:trig_type], @urls.uniq)
+    redirect_to webhooks_url    
   end
+
 
   private
      def url_params
-       params.require(:url).permit(:trig_type, :address)
+       params.require(:url).permit(:urls, :address)
      end
  end

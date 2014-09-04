@@ -1,6 +1,23 @@
 <li class="list-group-item">
   <span class="address"><%= url %></span>
+<<<<<<< HEAD
     <%= link_to "delete", params = {id: Url.find(53)}, method: :delete,
                                data: { confirm: "You sure?" },
                                title: url %>
+=======
+  <div>
+    <%= form_for(:url, url: urls_path) do |f| %>
+    <fieldset>
+      <div class="input-group">
+        <%= f.hidden_field :address,     :value => url     %>
+        <%= f.hidden_field :trig_type,   :value => trig_type %>
+        <%= f.hidden_field :button_type, :value => 'delete' %>
+        <span class="input-group-btn">
+          <%= f.submit "delete", class: "btn btn-link btn-del btn-xs" %>
+        </span>
+      </div><!-- /input-group -->
+      </fieldset>
+    <% end %>
+  </div>
+>>>>>>> networking
 </li>

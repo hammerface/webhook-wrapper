@@ -3,17 +3,17 @@
     <div class="col-xs-4">
       <p>change-commit</p>
       <%= render partial: "urlregion",
-	  locals: { list: @change, trigger: "change" } %>
+	  locals: { list: @change, trigger: "webhook-change-commit" } %>
     </div>
     <div class="col-xs-4">
       <p>shelve-commit</p>
       <%= render partial: "urlregion",
-	  locals: { list: @shelve, trigger: "shelve" } %>
+	  locals: { list: @shelve, trigger: "webhook-shelve-commit" } %>
     </div>
     <div class="col-xs-4">
       <p>form-commit</p>
       <%= render partial: "urlregion",
-	  locals: { list: @form, trigger: "form" } %>
+	  locals: { list: @form, trigger: "webhook-form-commit" } %>
     </div>
   </div>
 </div>
